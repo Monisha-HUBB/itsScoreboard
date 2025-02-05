@@ -3,6 +3,8 @@ const guestScoreElement = document.querySelector(".guestScore .scoreArea");
 
 const scoreButtons = document.querySelectorAll(".scoreAdd");
 
+const replayButton = document.querySelector(".newGame");
+
 let homeScore = 0;
 let guestScore = 0;
 
@@ -31,6 +33,13 @@ scoreButtons.forEach((button) => {
 
     updateScores();
   });
+});
+
+replayButton.addEventListener("click", () => {
+  homeScore = 0;
+  guestScore = 0;
+
+  updateScores();
 });
 
 updateScores();
