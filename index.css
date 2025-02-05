@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+}
+
+.leadTeam {
+  border: 20px solid #f9d74f;
+  box-shadow: 0 0 10px 3px rgba(249, 79, 109, 0.5);
+}
+
+.fullContainer {
+  text-align: center;
+}
+
+.newGame {
+  width: 40%;
+  background-color: black;
+  color: white;
+  font-family: Verdana;
+  font-size: 1rem;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.newGame:hover {
+  background-color: #f94f6d;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px 5px rgba(249, 79, 109, 0.5);
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1% 30%;
+  height: 55vh;
+  background-color: #1b244a;
+}
+
+.homeTitle {
+  font-family: "Verdana";
+  color: white;
+  font-size: 2rem;
+}
+
+.guestTitle {
+  font-family: "Verdana";
+  color: white;
+  font-size: 2rem;
+}
+
+.homeScore {
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guestScore {
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scoreArea {
+  text-align: center;
+  width: 120px;
+  width: 155px;
+  align-content: space-around;
+  height: 120px;
+  background-color: black;
+  color: #f94f6d;
+  border-radius: 5px;
+}
+
+.scoreTite {
+  margin: 7px;
+  text-align: center;
+}
+
+.scoreAdd {
+  width: 45px;
+  height: 45px;
+  border: solid 1px #9aabd8;
+  color: #9aabd8;
+  background-color: #1b244a;
+  border-radius: 5px;
+  margin-top: 7px;
+  font-family: "Cursed Timer ULiL", sans-serif;
+}
