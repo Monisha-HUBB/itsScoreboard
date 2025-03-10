@@ -22,6 +22,7 @@ function updateScores() {
   } else if (guestScore > homeScore) {
     guestScoreElement.classList.add("leadTeam");
   }
+   triggerVisualEffect(homeScore, guestScore);
 }
 
 // Event listener for score buttons
@@ -48,6 +49,18 @@ replayButton.addEventListener("click", () => {
 
 // Initialize the score display
 updateScores();
+
+// Function to trigger visual effect based on score difference
+function triggerVisualEffect(homeScore, guestScore) {
+  if (homeScore > guestScore) {
+    document.body.style.backgroundColor = "#f0f8ff"; // Light blue for Home lead
+  } else if (guestScore > homeScore) {
+    document.body.style.backgroundColor = "#ffebcd"; // Light beige for Guest lead
+  } else {
+    document.body.style.backgroundColor = "#ffffff"; // White background for tie
+  }
+}
+
 
 // === Speech Recognition Code ===
 
