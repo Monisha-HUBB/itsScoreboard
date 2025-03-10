@@ -65,24 +65,24 @@ function triggerVisualEffect(homeScore, guestScore) {
 // === Speech Recognition Code ===
 
 // Set up the speech recognition API
-const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-recognition.continuous = true;
+// const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+// recognition.continuous = true;
 
-recognition.onresult = (event) => {
-  const command = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
-  const homeCommand = /home.*\d+/i;
-  const guestCommand = /guest.*\d+/i;
+// recognition.onresult = (event) => {
+//   const command = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
+//   const homeCommand = /home.*\d+/i;
+//   const guestCommand = /guest.*\d+/i;
 
-  if (homeCommand.test(command)) {
-    const points = parseInt(command.match(/\d+/)[0]);
-    homeScore += points;
-    updateScores();
-  } else if (guestCommand.test(command)) {
-    const points = parseInt(command.match(/\d+/)[0]);
-    guestScore += points;
-    updateScores();
-  }
-};
+//   if (homeCommand.test(command)) {
+//     const points = parseInt(command.match(/\d+/)[0]);
+//     homeScore += points;
+//     updateScores();
+//   } else if (guestCommand.test(command)) {
+//     const points = parseInt(command.match(/\d+/)[0]);
+//     guestScore += points;
+//     updateScores();
+//   }
+// };
 
 // Start speech recognition
-recognition.start();
+// recognition.start();
