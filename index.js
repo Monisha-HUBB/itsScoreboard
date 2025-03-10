@@ -1,3 +1,4 @@
+// Existing DOM elements for score and buttons
 const homeScoreElement = document.querySelector(".homeScore .scoreArea");
 const guestScoreElement = document.querySelector(".guestScore .scoreArea");
 
@@ -8,6 +9,7 @@ const replayButton = document.querySelector(".newGame");
 let homeScore = 0;
 let guestScore = 0;
 
+// Function to update the score display
 function updateScores() {
   homeScoreElement.textContent = homeScore;
   guestScoreElement.textContent = guestScore;
@@ -22,6 +24,7 @@ function updateScores() {
   }
 }
 
+// Event listener for score buttons
 scoreButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const points = parseInt(button.textContent);
@@ -35,6 +38,7 @@ scoreButtons.forEach((button) => {
   });
 });
 
+// Event listener for replay button
 replayButton.addEventListener("click", () => {
   homeScore = 0;
   guestScore = 0;
@@ -42,4 +46,30 @@ replayButton.addEventListener("click", () => {
   updateScores();
 });
 
+// Initialize the score display
 updateScores();
+
+// === Speech Recognition Code ===
+
+// Set up the speech recognition API
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+recognition.continuous = true;
+
+recognition.onresult = (event) => {
+  const command = event.results[event.results.length - 1][0].transcript.trim().toLowerCase();
+  const homeCommand = /home.*\d+/i;
+  const guestCommand = /guest.*\d+/i;
+
+  if (homeCommand.test(command)) {
+    const points = parseInt(command.match(/\d+/)[0]);
+    homeScore += points;
+    updateScores();
+  } else if (guestCommand.test(command)) {
+    const points = parseInt(command.match(/\d+/)[0]);
+    guestScore += points;
+    updateScores();
+  }
+};
+
+// Start speech recognition
+recognition.start();
